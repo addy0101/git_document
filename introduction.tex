@@ -20,7 +20,29 @@ All git commands start with "$ git".
 
 \begin{itemize}
 \item $ git clone <path>: It clones a repository from cloud to local machine. Everyone who has access to clone can clone the git repository(informally, a folder or a directory) into a local machine. The best feature of git is that it is downloaded almost completely onto local machine. therfeore, even in case of loss of data or corrupted, we can easily get back the work that was previously saved/committed.
-\item $ git fetch
+\item $ git fetch : It fetches all the branches in a repository.
+\item git fork : It is like cloning a repository into our github account from somebody else's account. Once a repository is forked, it cann be cloned into our local machine.
+
+\end{itemize}
+\end{section}
+
+\begin{section}
+There are three key words. Namely, Modifying, Staging and commiting.\\
+Modifying : Any file that undergoes changes but not saved is called modified.\\
+staging : The files that are modified and stored to save.\\
+Commiting: The files that are staged are saved permanently. This process is called commiting.\\
+\end{section}
+\begin{section}{Common commands used}
+\begin{itemize}
+\item git add: This command stages any modified file to staging area.
+\item git commit: Commits the staged files in git. It will permanantly store with a committed id.
+\item git reset : It will reset the last changes. For eg., 'git reset --hard HEAD' would reset the head to last committed point.
+\item git status : It will print the status of the current working tree. It will provide details like modified, staged but not committed, or working directory is clean, etc.
+\item git log: It provides the commit history of that branch. 
+\item git branch: It will give print the branches available in the repository.
+\item git checkout: It will help switch from one branch to another branch. It will also help in creating a new branch with an extension as '-b' and new branch name.
+\item git merge: It helps in merging two branches of a repository. Many conflicts may arise in merging expecially if in a file the same line is edited and committed in two merging branches, git will not know which commits to keep and which to discard. In that process, git will ask us to first solve the conflicts and then commit the changes to merge.
+
 \end{itemize}
 \end{section}
 \end{document}
