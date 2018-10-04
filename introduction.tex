@@ -14,13 +14,13 @@ We create a number of versions of a software down the line. Sometimes we need to
 \begin{section}{Git commands}
 All git commands start with "$ git". 
 \begin{itemize}
-\item $ git --version : It prints the current version of git on the command line as shown in the fig \ref{fig:version}.
-\item $ git --help : A simple command of 'git help <command>' will open a detailed description of that particular command. 'git help -a' will list all the available commands in the git. 
+\item \$ git --version : It prints the current version of git on the command line as shown in the fig \ref{fig:version}.
+\item \$ git --help : A simple command of 'git help <command>' will open a detailed description of that particular command. 'git help -a' will list all the available commands in the git. 
 \end{itemize}
 
 \begin{itemize}
-\item $ git clone <path>: It clones a repository from cloud to local machine. Everyone who has access to clone can clone the git repository(informally, a folder or a directory) into a local machine. The best feature of git is that it is downloaded almost completely onto local machine. therfeore, even in case of loss of data or corrupted, we can easily get back the work that was previously saved/committed.
-\item $ git fetch : It fetches all the branches in a repository.
+\item \$ git clone <path>: It clones a repository from cloud to local machine. Everyone who has access to clone can clone the git repository(informally, a folder or a directory) into a local machine. The best feature of git is that it is downloaded almost completely onto local machine. therfeore, even in case of loss of data or corrupted, we can easily get back the work that was previously saved/committed.
+\item \$ git fetch : It fetches all the branches in a repository.
 \item git fork : It is like cloning a repository into our github account from somebody else's account. Once a repository is forked, it cann be cloned into our local machine.
 
 \end{itemize}
@@ -31,7 +31,22 @@ There are three key words. Namely, Modifying, Staging and commiting.\\
 Modifying : Any file that undergoes changes but not saved is called modified.\\
 staging : The files that are modified and stored to save.\\
 Commiting: The files that are staged are saved permanently. This process is called commiting.\\
+Sometimes, we modify the files but do not want to commit yet and move to another branch. git will display that some files are modified but not staged or committed. In that scenario, we can stash the changes. Git will store the changes separately without modify the actual file. After stashing, the working directory appears clean.\\
+The differences between the last committed and current modified file is stored in .diff file.
+\begin{figure}
+    \centering
+    \includegraphics{stash1.png}
+    \caption{Stashing}
+    %\label{fig:my_label}
+\end{figure}
+\begin{itemize}
+    \item \$ git status : This provides the current status of the directory like modified,staged or the working directory is clean.
+    \item \$ git stash : It will stash the changes. To apply the changes, we can use \$ git stash apply.
+    \item \$ git diff : The simple git diff will produce the changes made from last committed time. we can compare a file in two branches using \git diff master branch *.txt command.
+\end{itemize}
 \end{section}
+\end{section}
+
 \begin{section}{Common commands used}
 \begin{itemize}
 \item git add: This command stages any modified file to staging area.
@@ -45,4 +60,14 @@ Commiting: The files that are staged are saved permanently. This process is call
 
 \end{itemize}
 \end{section}
+
+\begin{section}{Undoing things}
+In case, we would like to undo the things like modifying, staging, commiting or untagging,etc., the following commands will help.
+\begin{itemize}
+\item \$ git commit --amend : If we want to amend the previous commit, this command will help. Any small modifications done to previous commit and we would like to redo that commit, --amend will be useful.
+\item \$ git reset HEAD <file> : This is used to unstage a staged file.
+\item \$ git checkout --<file> : This will completely erase the modifications and are gone forever.
+\end{itemize}
+\end{section}
+
 \end{document}
